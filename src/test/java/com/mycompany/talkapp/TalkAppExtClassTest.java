@@ -11,16 +11,18 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Student
  */
-    public class TalkAppExtClassTest {
+public class TalkAppExtClassTest {
         @Test
         public void testCheckUserName() { 
             TalkAppExtClass user =new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976");
-    }       assertTrue(user.checkUserName()); } 
+           assertTrue(user.checkUserName()); }
+    
 
         @Test
         public void testInvalidUserName() { 
         TalkAppExtClass user = new TalkAppExtClass("kyle !!!!!!!", "Ch&&set@ke99!", "+27838968976"); 
-        assertFalse(user.checkUserName()); }
+        assertFalse(user.checkUserName()); 
+        }
         
         @Test 
         public void testCheckPasswordComplexity() { 
@@ -78,16 +80,17 @@ import static org.junit.jupiter.api.Assertions.*;
             assertFalse( user.loginUser("wrong_user", "wrong_password") ); 
         }
         
-        @Test 
-        public void testReturnLoginStatusSuccessful() { 
+       @Test public void testReturnLoginStatusSuccessful() { 
+           TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
+           assertEquals( "Welcome Kyle Smith, it is great to finally meet you again.", user.returnLoginStatus(true, "Kyle", "Smith") ); 
+       } 
+       
+        @Test public void testReturnLoginStatusUnsuccessful() { 
             TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
-            assertEquals( "Welcome Kyle, it is great to finally meet you again.", user.returnLoginStatus(true, "Kyle") ); 
+            assertEquals( "Username or password is incorrect, please try again later.", user.returnLoginStatus(false, "Kyle", "Smith") ); 
         }
-        
-        @Test 
-        public void testReturnLoginStatusUnsuccessful() { 
-            TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
-            assertEquals( "Username or password is incorrect, please try again later.", user.returnLoginStatus(false, "Kyle") ); 
-        } 
-        
+        }
+    
+
+    
         
