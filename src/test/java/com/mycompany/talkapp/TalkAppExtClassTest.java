@@ -60,3 +60,9 @@ import static org.junit.jupiter.api.Assertions.*;
             assertEquals( "Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.", user.registerUser() ); 
         }
         
+        @Test 
+        public void testRegisterUserInvalidCellPhone() { 
+            TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "08966553"); 
+            assertEquals( "Cell phone number is incorrectly formatted or does not contain an international code; please correct the number and try again.", user.registerUser() ); 
+        }
+        
