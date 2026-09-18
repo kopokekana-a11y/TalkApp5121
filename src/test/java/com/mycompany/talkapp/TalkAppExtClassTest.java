@@ -12,12 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Student
  */
 public class TalkAppExtClassTest {
-    
-    public TalkAppExtClassTest() {
-    }
-@Test public void testCheckUserName() { 
-    TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
-    assertTrue(user.checkUserName()); }
-}
-    
+    @Test
+    public void testCheckUserName() { 
+        TalkAppExtClass user =new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976");
+}       assertTrue(user.checkUserName()); } 
 
+@Test public void testInvalidUserName() { 
+    TalkAppExtClass user = new TalkAppExtClass("kyle !!!!!!!", "Ch&&set@ke99!", "+27838968976"); 
+    assertFalse(user.checkUserName()); }
