@@ -66,3 +66,10 @@ import static org.junit.jupiter.api.Assertions.*;
             assertEquals( "Cell phone number is incorrectly formatted or does not contain an international code; please correct the number and try again.", user.registerUser() ); 
         }
         
+        @Test 
+        public void testLoginUser() { 
+            TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
+            assertTrue( user.loginUser("kyl_1", "Ch&&set@ke99!") ); 
+        }
+        
+        
