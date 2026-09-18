@@ -41,3 +41,9 @@ import static org.junit.jupiter.api.Assertions.*;
         public void testInvalidCellPhoneNumber() { 
             TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "08966553"); 
             assertFalse(user.checkCellPhoneNumber()); }
+        
+        @Test 
+        public void testRegisterUser() { 
+            TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
+            assertEquals( "User has been registered successfully.", user.registerUser() ); 
+        }
