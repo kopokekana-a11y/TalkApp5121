@@ -47,3 +47,10 @@ import static org.junit.jupiter.api.Assertions.*;
             TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
             assertEquals( "User has been registered successfully.", user.registerUser() ); 
         }
+        
+        @Test 
+        public void testRegisterUserInvalidUsername() { 
+            TalkAppExtClass user = new TalkAppExtClass("kyle !!!!!!!", "Ch&&set@ke99!", "+27838968976"); 
+            assertEquals( "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.", user.registerUser() ); 
+        }
+        
