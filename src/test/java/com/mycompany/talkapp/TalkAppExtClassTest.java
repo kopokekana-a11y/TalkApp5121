@@ -31,3 +31,8 @@ import static org.junit.jupiter.api.Assertions.*;
         public void testInvalidPassword() { 
             TalkAppExtClass user = new TalkAppExtClass("kyl_1", "password", "+27838968976"); 
             assertFalse(user.checkPasswordComplexity()); }
+        
+        @Test 
+        public void testCheckCellPhoneNumber() { 
+            TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
+            assertTrue(user.checkCellPhoneNumber()); }
