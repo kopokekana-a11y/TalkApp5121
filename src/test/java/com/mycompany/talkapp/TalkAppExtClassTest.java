@@ -84,4 +84,10 @@ import static org.junit.jupiter.api.Assertions.*;
             assertEquals( "Welcome Kyle, it is great to finally meet you again.", user.returnLoginStatus(true, "Kyle") ); 
         }
         
+        @Test 
+        public void testReturnLoginStatusUnsuccessful() { 
+            TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
+            assertEquals( "Username or password is incorrect, please try again later.", user.returnLoginStatus(false, "Kyle") ); 
+        } 
+        
         
