@@ -72,4 +72,10 @@ import static org.junit.jupiter.api.Assertions.*;
             assertTrue( user.loginUser("kyl_1", "Ch&&set@ke99!") ); 
         }
         
+        @Test 
+        public void testInvalidLogin() { 
+            TalkAppExtClass user = new TalkAppExtClass("kyl_1", "Ch&&set@ke99!", "+27838968976"); 
+            assertFalse( user.loginUser("wrong_user", "wrong_password") ); 
+        }
+        
         
